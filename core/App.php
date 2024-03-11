@@ -1,6 +1,7 @@
 <?php
 namespace core;
-
+use core\Database;
+use core\Container;
 
 class App{
     protected static $container;
@@ -29,3 +30,5 @@ class App{
    
 }
         
+require base_path('views/notes/bootstrap.php');
+

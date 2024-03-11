@@ -13,6 +13,7 @@ $container->bind('core\\Database', function(){
 });  
 
 App::setContainer($container);
+
 App::resolve('core\Database');
 
 
