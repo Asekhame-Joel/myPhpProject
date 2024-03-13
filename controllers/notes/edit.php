@@ -3,6 +3,7 @@ use core\App;
 use core\Database;
 
 $db = App::resolve(Database::class);
+
 $currentuserID = 1;
 
     $note = $db->Query(
@@ -13,8 +14,9 @@ $currentuserID = 1;
     )->findorFail();
     authorize($note['user_id'] === $currentuserID);
 
-
-    view("notes/show.view.php", [
-        'heading' => 'Note',
-        'note' => $note
-    ]);
+view("notes/edit.view.php", [
+    'heading' => 'Edit Note',
+    'errors' => [], 
+    'note' => $note
+]);
+ 
