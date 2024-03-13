@@ -9,7 +9,7 @@ $db = App::resolve(Database::class);
 $currentuserID = 1;
 
 //find the corresponding note
-$note = $db->Query(
+$note = $db->Query( 
     "SELECT * FROM notes WHERE  id = :id",
     [
         'id' => $_POST['id']
