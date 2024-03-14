@@ -12,7 +12,7 @@ $currentuserID = 1;
 $note = $db->Query( 
     "SELECT * FROM notes WHERE  id = :id",
     [
-        'id' => $_POST['id']
+    'id' => $_POST['id']
     ]
 )->findorFail();
 

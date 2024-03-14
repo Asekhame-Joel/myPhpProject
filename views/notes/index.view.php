@@ -13,12 +13,9 @@ foreach ($notes as $note): ?>
     <?php  echo htmlspecialchars($note['body']) ?>
     </a>
 </li>
-
 <?php  endforeach; ?>
      </h1>  
-
      <p class="mt-5"> <a href ="notes/create" class="text-blue-500 border-4">
         Create Note
      </a> </p> 
-
      <?php require base_path('views/partials/footer.php') ?>
