@@ -7,7 +7,7 @@ $db = App::resolve(Database::class);
 $errors =[];
 
 
-    if (!Validator::string($_POST['body'], 1, 20)){
+    if (!Validator::string($_POST['body'], 1, 100)){
         $errors['body'] = "Body of no more than 20 words is required";
     }
 
