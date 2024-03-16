@@ -3,7 +3,6 @@ use core\Validator;
 use core\Database;
 use core\App;
 
-$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -29,13 +28,11 @@ $user = $db->Query('select * from user where email = :email',[
 
 //if yes, redirect to a login page
 if($user){
-dd("This User already exist!!!!!!!!!!");
-    exit();
-
+    header('location: /');
+    exit();   
 }else{
      //if not, create it and login the user
-    $db->Query('INSERT INTO user(name, email, password) VALUES(:name, :email, :password)',[
-    'name' => $name,
+    $db->Query('INSERT INTO user(email, password) VALUES(:email, :password)',[
     'email' => $email,
     'password' => $password
 
