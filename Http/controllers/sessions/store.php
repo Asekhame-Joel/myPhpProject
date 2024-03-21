@@ -3,6 +3,7 @@
 // use core\Validator;
 use core\Authenticator;
 use Http\Forms\LoginForm;
+use core\Session;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -18,11 +19,13 @@ if ($auth->attempt($email, $password)) {
 
 }
 }
+Session::flash('errors', $form->errors());
+redirect('/login');
 
 
-return view('sessions/create.view.php', [
-    'errors' => $form->errors()
-]);
+// return view('sessions/create.view.php', [
+//     'errors' => $form->errors()
+// ]);
  
 // return view('sessions/create.view.php', [
 //         'errors' => [
