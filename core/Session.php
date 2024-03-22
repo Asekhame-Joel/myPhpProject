@@ -1,6 +1,6 @@
 <?php
 namespace core;
-
+use core\Authenticator;
 class Session
 {
     public static function has($key)
@@ -49,4 +49,4 @@ class Session
         setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
     }
 }
-
+ 

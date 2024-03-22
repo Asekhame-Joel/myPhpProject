@@ -1,5 +1,6 @@
 <?php
 namespace core;
+use core\Session;
 
 // use core\Middleware\Auth;
 // use core\Middleware\Guest;
@@ -35,11 +36,6 @@ class Authenticator
             'email' => $user['email']
         ];
         session_regenerate_id(true);
-    }
-
-    public function logout()
-    {
-        Session::destroy();
     }
 
 

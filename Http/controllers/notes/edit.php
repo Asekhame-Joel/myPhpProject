@@ -4,7 +4,7 @@ use core\Database;
 
 $db = App::resolve(Database::class);
 
-$currentuserID = 1;
+$currentuserID = 13;
 
     $note = $db->Query(
         "SELECT * FROM notes WHERE  id = :id",

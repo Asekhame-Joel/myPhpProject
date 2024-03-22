@@ -6,7 +6,7 @@ use core\Database;
 
 $db = App::resolve(Database::class);
 
-$currentuserID = 1;
+$currentuserID = 13;
 
 //find the corresponding note
 $note = $db->Query( 

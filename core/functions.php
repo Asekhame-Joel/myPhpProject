@@ -1,6 +1,7 @@
 <?php 
 
 use core\Response;
+use core\Session;
 
 
 function dd($value){
@@ -41,3 +42,14 @@ function redirect($path){
     header("location: {$path}");
     exit();
 }
+
+function old($key, $default = ''){
+    return  core\Session::get('old')[$key] ?? $default;
+
+}
+function logout()
+{
+ Session::destroy();
+} 
+
+
